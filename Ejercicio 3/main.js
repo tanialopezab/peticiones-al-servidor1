@@ -1,10 +1,10 @@
 'use strict'
 
 const buttonElement = document.querySelector('.btn');
-const inputElement = document.getElementById('text');
-const paraNameElement = document.querySelector('.name');
-const imageElement = document.querySelector('.avatar');
-const paraRepoElement = document.querySelector('.repositorios');
+let inputElement = document.getElementById('text');
+let paraNameElement = document.querySelector('.name');
+let imageElement = document.querySelector('.avatar');
+let paraRepoElement = document.querySelector('.repositorios');
 
 
 
@@ -18,6 +18,9 @@ function ButtonClickSearch (){
     })
     .then(function(dataJson){
         console.log(dataJson);
+        paraNameElement.innerHTML = dataJson.login;
+        imageElement.src = dataJson.avatar_url;
+        paraRepoElement.innerHTML = dataJson.public_repos;
     })
 
 
