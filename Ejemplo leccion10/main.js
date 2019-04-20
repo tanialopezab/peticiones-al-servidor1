@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 const ul = document.querySelector('.list');
 
 fetch('https://dog.ceo/api/breeds/list')
@@ -13,7 +13,6 @@ fetch('https://dog.ceo/api/breeds/list')
       for(let i= 0; i < breeds.length; i++){
           ul.innerHTML = ul.innerHTML + `<li>${breeds[i]}</li>`;
       }
-
         
     })
     
