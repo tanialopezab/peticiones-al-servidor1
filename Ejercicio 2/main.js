@@ -2,15 +2,15 @@
 
 
 // fetch('https://dog.ceo/api/breeds/image/random')
-//     .then(function(response){
+//     .then(function (response) {
 //         console.log(response);
 //         return response.json();
 //     })
-//     .then(function(datosJson){
+//     .then(function (datosJson) {
 //         console.log(datosJson);
 //         const img = document.querySelector('img');
 //         img.src = datosJson.message;
-//         Image.alt = 'un perrete';
+//         img.alt = 'un perrete';
 //     })
 
 //línea 16 responde con un objeto con muchos datos
@@ -20,23 +20,22 @@
 
 ///MODIFICACION PARA QUE SOLO SALGAN CHIHUAHUAS
 
+
 const buttonEl = document.querySelector('.btn');
 
-
-function buttonClickRandomImage() {
-
-    fetch('https://dog.ceo/api/breed/Chihuahua/image/random')
-        .then(function (response) {
-            console.log(response);
-            return response.json();
-        })
-        .then(function (datosJson) {
-            console.log(datosJson);
-            const img = document.querySelector('.photo');
-            img.src = datosJson.message;
-            Image.alt = 'un chihuahua';
-        })
+function handlerButtonClick(){
+fetch('https://dog.ceo/api/breed/Chihuahua/image/random')
+    .then(function (response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function (datosJson) {
+        console.log(datosJson);
+        const img = document.querySelector('img');
+        img.src = datosJson.message;
+        img.alt = 'un perrete';
+    })
 }
-buttonEl.addEventListener('click', buttonClickRandomImage);
+buttonEl.addEventListener('click', handlerButtonClick);
 
-///LA PETION FALLA, INTENTAR MAS TARDE;
+handlerButtonClick();
